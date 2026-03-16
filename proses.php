@@ -9,11 +9,11 @@ if(isset($_POST['submit'])){
     $temp = "harga_" . $_POST['jam'];
 
     $host = "localhost";
-    $port = 3306;
-    $database = "db_kokocar";
+    $port = 8889;
+    $database = "kokocar_db";
     $user = "root";
-    $pw = "";
-    $connection = new PDO("mysql:host=$host:$port;dbname=$database", $user, $pw);
+    $pw = "root";
+    $connection = new PDO("mysql:host=$host;port=$port;dbname=$database", $user, $pw);
     if(isset($_GET["id"])){
         $id = $_GET["id"];
         $sql = "select " . $temp . " from mobil where id = ?";

@@ -1,11 +1,11 @@
 <?php
     session_start();
     $host = "localhost";
-    $port = 3306;
-    $database = "db_kokocar";
+    $port = 8889;
+    $database = "kokocar_db";
     $user = "root";
-    $pw = "";
-    $connection = new PDO("mysql:host=$host:$port;dbname=$database", $user, $pw);
+    $pw = "root";
+    $connection = new PDO("mysql:host=$host;port=$port;dbname=$database", $user, $pw);
     $sql = "select * from mobil";
     $result = $connection->prepare($sql);
     $result->execute();
